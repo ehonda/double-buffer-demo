@@ -22,8 +22,6 @@ const Velocity WEST = { -1, 0 };
 const Velocity NORTH_WEST = { -1, -1 };
 const Velocity STILL = { 0, 0 };
 
-Velocity operator*(int scalar, const Velocity& v);
-
 struct MovingRectangle {
 	double mass;
 	boost::geometry::model::d2::point_xy<double> center;
@@ -96,8 +94,7 @@ private:
 
 	using RectList = std::list<MovingRectangle>;
 	RectList rectBuffers_[2];
-	RectList* current_, *next_;
-	//RectList* next_;
+	RectList *current_, *next_;
 	
 	std::shared_ptr<SDL_Renderer> renderer_;
 };

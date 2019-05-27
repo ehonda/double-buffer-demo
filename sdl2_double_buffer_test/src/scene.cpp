@@ -12,10 +12,6 @@
 
 namespace scene {
 
-Velocity operator*(int scalar, const Velocity& v) {
-	return { scalar * v.x(), scalar * v.y() };
-}
-
 MovingRectangle createRect(const SDL_Rect& rect, const Velocity& v) {
 	MovingRectangle r;
 	r.mass = static_cast<double>(rect.w) * rect.h;
